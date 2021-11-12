@@ -12,7 +12,6 @@ const BodyStyle = {
     display : "flex",
 }
 
-
 function App (){
   return (
   <div style={BodyStyle}>
