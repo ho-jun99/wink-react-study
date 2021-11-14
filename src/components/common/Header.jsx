@@ -15,6 +15,11 @@ const LinkStyle = {
     textDecoration : "none",
 }
 
+const HeaderWrapperStyle = {
+  display : "flex",
+  flexDirection : "row"
+}
+
 const HeaderNum = {
     fontSize : "0.8rem",
 }
@@ -25,7 +30,7 @@ const HeaderTitle = {
 
 const Header = () => {
   return (
-    <>
+    <div style={HeaderWrapperStyle}>
         <Link to="/intro" style={LinkStyle}><h style={HeaderNum}>I.</h><h style={HeaderTitle}>Intro</h></Link>
       <Link to="/story" style={LinkStyle} ><h style={HeaderNum}>II.</h><h style={HeaderTitle}>Story</h></Link>
         <Link to="/award" style={LinkStyle}><h style={HeaderNum}>III.</h><h style={HeaderTitle}>Award</h></Link>
@@ -33,7 +38,7 @@ const Header = () => {
         <Link to="/interpret" style={LinkStyle}><h style={HeaderNum}>V.</h><h style={HeaderTitle}>Interpret</h></Link>
       <Link to="/credit" style={LinkStyle}><h style={HeaderNum}>VI.</h><h style={HeaderTitle}>Credit</h></Link>
       
-    </>
+    </div>
   )
 }
 
