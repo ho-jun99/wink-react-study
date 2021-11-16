@@ -20,7 +20,6 @@ const MainStyle ={
   height : "300vh"
 }
 
-
 function App (){
   return (
   <div div style = {MainStyle}>
