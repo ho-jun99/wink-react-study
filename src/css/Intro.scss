@@ -29,4 +29,13 @@
   border-radius: 5px;
   font-size: 1.5em;
   font-weight: bold;
+
+&:disabled{
+  background-color: gray;
+  color: black;
+  border: beige 0.5px solid;
 }
+
+}
+
+

@@ -1,4 +1,5 @@
-import react from 'react';
+import react,{useEffect,useState} from 'react';
+import {Link} from 'react-router-dom'
 import "../css/Intro.css"
 import gif_gameIntro from "../Image/Intro/IntroGame.gif"
 import gif_willDie from "../Image/Intro/WillDie.gif"
@@ -17,7 +18,20 @@ const textSizeSmall = {
   marginBottom: "1%"
 }
 
+
+
 const Intro = (props) => {
+  const [sec,setSec] = useState(0)
+  //생명주기
+  useEffect(() => { // ComponentDidMount
+    if(sec <= 455){
+      const timer = setTimeout(() => {
+        setSec(prev => prev + 1)
+      }, 50)
+      return () => { clearTimeout(timer) } //ComponentWillUnmount
+    }
+  }, [sec]) //componentDidUpdate
+
   return(
     <div className="Intro-flex-wrapper">
       <section className="Intro-section-1">
@@ -45,10 +59,15 @@ const Intro = (props) => {
             <img src={squidMan}></img>
             <div className="colum-flex-box">
               <img src={pink_logo}></img>
-              <div style={textSizeSmall}>참가자 456명</div>
-              <div style={textSizeSmall}>총상금 456억</div>
+              <div style={textSizeSmall}>참가자 {sec}명</div>
+              <div style={textSizeSmall}>총상금 {sec}억</div>
               <div style={textSizeBig}>게임에 참가 하시겠습니까?</div>
-              <button className="btn-join">참가하기</button>
+            {sec > 455 ? <button className="btn-join" disabled="true">신청마감</button> : <Link to={{
+              pathname: '/Story',
+              state : {
+                
+              }
+            }}><button className="btn-join" >참가하기</button></Link>}
             </div>
           </div>
         </section>
