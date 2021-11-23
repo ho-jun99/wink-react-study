@@ -20,6 +20,13 @@
   
 }
 
+.Intro-section-users {
+    display: flex;
+    flex-direction: row;
+    height: 90.85vh;
+    justify-content: center;
+}
+
 .btn-join {
   background-color: #67002B;
   width:10vw;
@@ -35,6 +42,7 @@
   color: black;
   border: beige 0.5px solid;
 }
+
 
 }
 

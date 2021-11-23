@@ -5,6 +5,7 @@ import gif_gameIntro from "../Image/Intro/IntroGame.gif"
 import gif_willDie from "../Image/Intro/WillDie.gif"
 import squidMan from "../Image/Intro/SquidMan.png"
 import pink_logo from "../Image/logoPink.png"
+import Candidator from '../components/Candidator';
 
 const textSizeBig = {
   fontSize : "2.3em",
@@ -17,6 +18,8 @@ const textSizeSmall = {
   fontWeight: "bold",
   marginBottom: "1%"
 }
+
+const user = ["1번","2번","3번","4번","5번","6번","7번"]
 
 
 
@@ -65,11 +68,16 @@ const Intro = (props) => {
             {sec > 455 ? <button className="btn-join" disabled="true">신청마감</button> : <Link to={{
               pathname: '/Story',
               state : {
-                
               }
             }}><button className="btn-join" >참가하기</button></Link>}
             </div>
           </div>
+        </section>
+
+        <section className="Intro-section-users">
+          {user.map((item, index) => (
+            (<Candidator user={item}></Candidator>)
+          ))}
         </section>
     
       
