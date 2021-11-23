@@ -17,7 +17,7 @@ const BodyStyle = {
 
 const MainStyle ={
   backgroundColor : "black",
-  height : "300vh"
+  height : "400vh"
 }
 
 
