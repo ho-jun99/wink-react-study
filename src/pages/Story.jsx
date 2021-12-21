@@ -1,5 +1,6 @@
 import react,{useState,useEffect} from 'react';
 import { useLocation } from "react-router-dom";
+import Counter from '../components/Counter';
 
 
 const Stroy = (props) => {
@@ -14,7 +15,9 @@ const Stroy = (props) => {
   return(
     <>
       <div>스토리 페이지입니다.</div>
-      
+      <hr/><hr/>
+      <div>리덕스 패턴, 카운터기</div>
+      <Counter/>
     </>
   )
 }
